@@ -1,1 +1,23 @@
-
+/** Sam's Clothing Store
+shirts (73)
+pants (52)
+coats (33)
+shoes (14)
+accessories (28)
+**/
+CREATE TABLE Clothing (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, aisle INTEGER);
+INSERT INTO Clothing VALUES (1, "shirts", 73, 15, 1);
+INSERT INTO Clothing VALUES (2, "pants", 52, 29, 2);
+INSERT INTO Clothing VALUES (3, "coats", 33, 59, 3);
+INSERT INTO Clothing VALUES (4, "shoes", 14, 40, 4);
+INSERT INTO Clothing VALUES (5, "accessories", 28, 10, 5);
+SELECT * FROM Clothing ORDER BY aisle;
+CREATE TABLE Sold (id INTEGER PRIMARY KEY, name TEXT, quantity_sold INTEGER, price_of_each INTEGER, total INTEGER);
+INSERT INTO Sold VALUES (1, "shirts", 3, 15, 45); 
+INSERT INTO Sold VALUES (2, "pants", 4, 29, 116);
+INSERT INTO Sold VALUES (3, "coats", 3, 59, 177);
+INSERT INTO Sold VALUES (4, "shoes", 3, 40, 120);
+INSERT INTO Sold VALUES (5, "accessories", 2, 10, 20);
+SELECT * FROM Sold;
+SELECT SUM (quantity_sold) FROM Sold;
+SELECT SUM (total) FROM Sold;
