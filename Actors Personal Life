@@ -1,0 +1,47 @@
+CREATE TABLE movieactors (id INTEGER PRIMARY KEY, name TEXT, movie INTEGER, co_star INTEGER);
+
+INSERT INTO movieactors VALUES (1, "John Krasinski", "A Quiet Place", "Emily Blunt");
+
+INSERT INTO movieactors VALUES (2, "Emily Blunt", "A Quiet Place", "John Krasinski");
+
+INSERT INTO movieactors VALUES (3, "Adam Sandler", "Grown Ups", "Jackie Sandler");
+
+INSERT INTO movieactors VALUES (4, "Jackie Sandler", "Grown Ups", "Adam Sandler");
+
+INSERT INTO movieactors VALUES (5, "Brad Pitt", "Mr And Mrs Smith","Angelina Jolie" );
+
+INSERT INTO movieactors VALUES (6, "Angelina Jolie", "Mr And Mrs Smith", "Brad Pitt");
+
+INSERT INTO movieactors VALUES (7, "Kristen Bell", "Chips", "Dax Shepard");
+
+INSERT INTO movieactors VALUES (8, "Dax Shepard", "Chips", "Kristen Bell");
+
+INSERT INTO movieactors VALUES (9, "Melissa McCarthy", "Bridesmades", "Ben Falcone");
+
+INSERT INTO movieactors VALUES (10, "Ben Falcone", "Bridesmades", "Melissa McCarthy");
+
+CREATE TABLE actor_spouses (id INTEGER PRIMARY KEY, name TEXT, spouse INTEGER);
+
+INSERT INTO actor_spouses VALUES (1, "Adam Sandler", "Jackie Sandler");
+
+INSERT INTO actor_spouses VALUES (2, "Jackie Sandler", "Adam Sandler");
+
+INSERT INTO actor_spouses VALUES (3, "John Krasinski", "Emily Blunt");
+
+INSERT INTO actor_spouses VALUES (4, "Emily Blunt", "John Krasinski");
+
+INSERT INTO actor_spouses VALUES (5, "Brad Pitt", "Angelina Jolie");
+
+INSERT INTO actor_spouses VALUES (6, "Angelina Jolie", "Brad Pitt");
+
+INSERT INTO actor_spouses VALUES (7, "Kristen Bell", "Dax Shepard");
+
+INSERT INTO actor_spouses VALUES (8, "Dax Shepard", "Kristen Bell");
+
+INSERT INTO actor_spouses VALUES (9, "Melissa McCarthy", "Ben Falcone");
+
+INSERT INTO actor_spouses VALUES (10, "Ben Falcone", "Melissa McCarthy");
+
+SELECT movieactors.name, actor_spouses.name AS spouses_name FROM movieactors JOIN actor_spouses ON movieactors.name = actor_spouses.spouse;
+
+SELECT movieactors.name, actor_spouses.name AS spouses_name FROM movieactors LEFT OUTER JOIN actor_spouses ON movieactors.name = actor_spouses.spouse;
